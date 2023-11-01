@@ -45,7 +45,7 @@ void toggleLED(int buttonState,int& ledState){
       ledState = HIGH;
       digitalWrite(ledPin,HIGH);
     }
-    delay(1000);
+    delay(500);
   }
   return;
 }
