@@ -29,13 +29,14 @@ void disengage(A4988& stepper);
 void setup() {
   pinMode(buttonPin,INPUT);
   pinMode(ledPin,OUTPUT);
+  stepper.begin(1,1);
 }
 
 void loop() {
   buttonState = digitalRead(buttonPin);
   if(buttonState == HIGH){
     toggleLED(ledState);
-
+    stepper.rotate(360);
 
 
   }
