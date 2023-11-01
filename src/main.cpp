@@ -15,6 +15,11 @@ int ledState = LOW;
 void toggleBlinds(A4988& stepper,int& blindState);
 //toggles the led on the board on or off based on the press of a push button
 void toggleLED(int& ledState);
+//spins the motor enough times that it sets the blinds in a extended position
+void engage(A4988& stepper);
+//spins the motor in the closing direction until blinds are closed;
+void disengage(A4988& stepper);
+
 
 void setup() {
   pinMode(buttonPin,INPUT);
@@ -46,15 +51,14 @@ void toggleLED(int& ledState){
   delay(500);
   return;
 }
-//might be more efficient to put button logic outside toggle blinds if multiple button 
-//dependant functions are used
+
 void toggleBlinds(A4988& stepper,int& blindState){
   if(blindState == HIGH){
     blindState =LOW;
-    disengage();
+    disengage(stepper);
   }else{
     blindState = HIGH;
-    engage();
+    engage(stepper);
   }
   delay(2000);
   return;
