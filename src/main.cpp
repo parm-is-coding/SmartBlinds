@@ -12,7 +12,7 @@ int ledState = LOW;
 // put function declarations here:
 
 //engage or disengage blinds based on buttonState
-void toggleBlinds(A4988& stepper,int buttonState, int& blindState);
+void toggleBlinds(A4988& stepper,int& blindState);
 //toggles the led on the board on or off based on the press of a push button
 void toggleLED(int& ledState);
 
@@ -48,7 +48,14 @@ void toggleLED(int& ledState){
 }
 //might be more efficient to put button logic outside toggle blinds if multiple button 
 //dependant functions are used
-void toggleBlinds(A4988& stepper,int buttonState,int& blindState){
-  
+void toggleBlinds(A4988& stepper,int& blindState){
+  if(blindState == HIGH){
+    blindState =LOW;
+    disengage();
+  }else{
+    blindState = HIGH;
+    engage();
+  }
+  delay(2000);
   return;
 }
