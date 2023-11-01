@@ -14,7 +14,7 @@ int ledState = LOW;
 //engage or disengage blinds based on buttonState
 void toggleBlinds(A4988& stepper,int buttonState, int& blindState);
 //toggles the led on the board on or off based on the press of a push button
-void toggleLED(int buttonState, int& ledState);
+void toggleLED(int& ledState);
 
 void setup() {
   pinMode(buttonPin,INPUT);
@@ -23,34 +23,32 @@ void setup() {
 
 void loop() {
   buttonState = digitalRead(buttonPin);
+  if(buttonState == HIGH){
+    toggleLED(ledState);
+
+
+
+  }
+
   
-  toggleLED(buttonState,ledState);
-
-  //digitalWrite(LED_BUILTIN,LOW);
-  //toggleBlinds(stepper, buttonState);
-
 }
 
 
 
-void toggleLED(int buttonState,int& ledState){
-  if(buttonState == HIGH){
-    if(ledState == HIGH){
-      ledState = LOW;
-      digitalWrite(ledPin,LOW);
-    }else{
-      ledState = HIGH;
-      digitalWrite(ledPin,HIGH);
-    }
-    delay(500);
+void toggleLED(int& ledState){
+  if(ledState == HIGH){
+    ledState = LOW;
+    digitalWrite(ledPin,LOW);
+  }else{
+    ledState = HIGH;
+    digitalWrite(ledPin,HIGH);
   }
+  delay(500);
   return;
 }
 //might be more efficient to put button logic outside toggle blinds if multiple button 
 //dependant functions are used
 void toggleBlinds(A4988& stepper,int buttonState,int& blindState){
-  if(buttonState == HIGH){
-      if()
-  } 
+  
   return;
 }
