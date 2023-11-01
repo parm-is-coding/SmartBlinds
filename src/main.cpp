@@ -3,12 +3,17 @@
 //pin macros
 #define buttonPin 4
 #define ledPin 13
-
+//motor pins
+#define MOTOR_STEPS 200
+#define DIR 2
+#define STEP 3
+#define MS1 9 
+#define MS2 10
+#define MS3 11
 // put variable declarations here:
 int buttonState = LOW;
 int ledState = LOW;
-//A4988 stepper();
-
+A4988 stepper(MOTOR_STEPS,DIR,STEP,MS1,MS2,MS3);
 // put function declarations here:
 
 //engage or disengage blinds based on buttonState
@@ -63,3 +68,4 @@ void toggleBlinds(A4988& stepper,int& blindState){
   delay(2000);
   return;
 }
+
