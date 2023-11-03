@@ -3,20 +3,12 @@
 //pin macros
 #define buttonPin 4
 #define ledPin 13
-//motor pins
-// #define MOTOR_STEPS 200
-// #define MICROSTEPS 1
-// #define RPM 120
-
 #define DIR 2
 #define STEP 3
-// #define MS1 9 
-// #define MS2 10
-// #define MS3 11
+
 // put variable declarations here:
 int buttonState = LOW;
 int ledState = LOW;
-//A4988 stepper(MOTOR_STEPS,DIR,STEP);
 // put function declarations here:
 
 //engage or disengage blinds based on buttonState
@@ -47,7 +39,8 @@ void loop() {
 }
 
 
-
+//toggles the led on the arduino uno
+//used to test push button functionality
 void toggleLED(int& ledState){
   if(ledState == HIGH){
     ledState = LOW;
@@ -59,7 +52,7 @@ void toggleLED(int& ledState){
   delay(500);
   return;
 }
-
+//on click with toggle the blinds connected to the motor in the final state of the project
 void toggleBlinds(A4988& stepper,int& blindState){
   if(blindState == HIGH){
     blindState =LOW;
@@ -71,7 +64,8 @@ void toggleBlinds(A4988& stepper,int& blindState){
   delay(2000);
   return;
 }
-
+//causes the motor to rotate 360 degrees 
+//use this logic to define engage and disengage fns in toggle blinds
 void rotateMotor360(){
   digitalWrite(DIR,HIGH);
   for(int x =0; x < 200; x++){
