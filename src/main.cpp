@@ -5,6 +5,7 @@
 #define ledPin 13
 #define DIR 2
 #define STEP 3
+#define linearDistanceCM 90
 
 // put variable declarations here:
 int buttonState = LOW;
