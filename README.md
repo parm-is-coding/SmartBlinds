@@ -8,3 +8,6 @@ i have many ideas in store for this project. For one I already bought an arduino
 
 # Closing thoughts
  Currently the project is in its very early stages the only thing that limits me right now is time! 
+
+ # Update 1 Circuit Diagram
+ ![](CircuitDiagram.png)
