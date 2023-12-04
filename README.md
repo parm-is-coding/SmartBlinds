@@ -6,8 +6,18 @@ Smart blinds is my first project in the world of embedded systems and IOT. I wan
 
 i have many ideas in store for this project. For one I already bought an arduino R4 which has wifi capabilities! I plan on figuring out how AWS works so that i can use a website on my phone to open and close the blinds as well as add some sort of speaker module so that i can toggle the blinds with the clap of my hands because it would be hilarious!(props to my buddy Alex Shevchuk for giving me the idea!) 
 
+
+# System Diagram
+![](BlockDiagram.jpg)
+This is the current System Block Diagram for my project so far. I'm gonna update this as time goes on.
+
+ # Circuit Diagram
+ ![](CircuitDiagram.png)
+Above is a diagram of the current circuit with the push of a button im able to rotate my motor 360 degrees this action will be the foundation of what my project is capable of doing 
+
+# Failed Prototypes
+![](Img1.PNG) ![](Cad.png) ![](img3.JPG)
+
+here are some of the failed designs i've made for the blind mechanism to prove im doing stuff!
 # Closing thoughts
  Currently the project is in its very early stages the only thing that limits me right now is time! 
-
- # Update 1 Circuit Diagram
- ![](CircuitDiagram.png)
