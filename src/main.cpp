@@ -17,9 +17,12 @@ void toggleBlinds(int& blindState);
 //toggles the led on the board on or off based on the press of a push button
 void toggleLED(int& ledState);
 //spins the motor enough times that it sets the blinds in a extended position
+//currently not implemented since i need to finish the mechanical aspects of my project first.
 void engage();
 //spins the motor in the closing direction until blinds are closed;
+//currently not implemented since i need to finish the mechanical aspects of my project first.
 void disengage();
+//a test function that spins the motor by 360 degrees 
 void rotateMotor360();
 
 void setup() {
